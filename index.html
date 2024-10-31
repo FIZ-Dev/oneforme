@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script>
+        function redirectTo(url) {
+            window.location.href = url;
+        }
+
+        function toggleMenu() {
+            const menu = document.getElementById("menu");
+            menu.classList.toggle("hidden");
+        }
+
+        function showProfile() {
+            alert("Navigating to profile!");
+        }
+    </script>
+    <title>Responsive Webpage</title>
+    <style>
+        /* Background image with blur effect */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('Asset/bg.jpg');
+            /* Replace with your background image URL */
+            background-size: cover;
+            background-position: center;
+            filter: blur(8px);
+            z-index: -1;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-300 bg-opacity-70 flex flex-col items-center p-4">
+
+    <!-- Header -->
+    <div class="w-full flex justify-between items-center mb-4">
+        <i class="fas fa-bars text-black text-2xl cursor-pointer" onclick="toggleMenu()"></i>
+        <h1 class="text-black font-bold text-lg md:text-2xl">IyzaqNoirDev</h1>
+        <i class="fas fa-user-circle text-black text-2xl cursor-pointer" onclick="showProfile()"></i>
+    </div>
+
+    <!-- Burger Menu (hidden by default) -->
+    <div id="menu" class="w-full bg-gray-100 rounded-lg p-4 mb-4 hidden md:hidden">
+        <ul class="space-y-2">
+            <li><a href="#" class="text-black">Home</a></li>
+            <li><a href="#" class="text-black">About</a></li>
+            <li><a href="#" class="text-black">Services</a></li>
+            <li><a href="#" class="text-black">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- App List with Icons -->
+    <div class="w-full space-y-4">
+        <div class="bg-black bg-opacity-60 rounded-lg p-4 flex items-center cursor-pointer"
+            onclick="redirectTo('https://example.com/app2')">
+            <i class="fab fa-facebook text-gray-300 text-2xl mr-2"></i>
+            <span class="bg-gray-700 text-gray-300 text-xs px-2 py-1 rounded-full">click!</span>
+        </div>
+        <div class="bg-black bg-opacity-60 rounded-lg p-4 flex items-center cursor-pointer"
+            onclick="redirectTo('https://example.com/app3')">
+            <i class="fab fa-github text-gray-300 text-2xl mr-2"></i>
+            <span class="bg-gray-700 text-gray-300 text-xs px-2 py-1 rounded-full">click!</span>
+        </div>
+        <div class="bg-black bg-opacity-60 rounded-lg p-4 flex items-center cursor-pointer"
+            onclick="redirectTo('https://example.com/app4')">
+            <i class="fab fa-github text-gray-300 text-2xl mr-2"></i>
+            <span class="bg-gray-700 text-gray-300 text-xs px-2 py-1 rounded-full">click!</span>
+        </div>
+    </div>
+
+    <!-- Gallery -->
+    <div class="w-full mt-8">
+        <span class="bg-gray-700 text-gray-300 text-xs px-2 py-1 rounded-full">Gallery</span>
+        <div class="bg-black bg-opacity-60 rounded-lg p-4 mt-2 grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="bg-gray-200 rounded-lg flex items-center justify-center h-24 overflow-hidden">
+                <img src="Asset/gambar.jpg" alt="Image 1" class="w-full h-full object-cover">
+            </div>
+            <div class="bg-gray-200 rounded-lg flex items-center justify-center h-24 overflow-hidden">
+                <img src="Asset/gambar.jpg" alt="Image 2" class="w-full h-full object-cover">
+            </div>
+            <div class="bg-gray-200 rounded-lg flex items-center justify-center h-24 overflow-hidden">
+                <img src="Asset/gambar.jpg" alt="Image 3" class="w-full h-full object-cover">
+            </div>
+            <div class="bg-gray-200 rounded-lg flex items-center justify-center h-24 overflow-hidden">
+                <img src="Asset/gambar.jpg" alt="Image 4" class="w-full h-full object-cover">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
